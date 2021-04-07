@@ -1,0 +1,32 @@
+{
+  "name": "rest-api-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infiniteoo/rest-api-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infiniteoo/rest-api-demo/issues"
+  },
+  "homepage": "https://github.com/infiniteoo/rest-api-demo#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/node": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.5"
+  }
+}

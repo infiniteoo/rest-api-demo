@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node api",
-    "init-db": "babel-node database/utility/initializeDatabase"
+    "start": "nodemon --exec babel-node api",
+    "init-db": "babel database/utility/initializeDatabase"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
   "homepage": "https://github.com/infiniteoo/rest-api-demo#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^3.6.6"
+    "mongodb": "^3.6.6",
+    "nodemon": "^2.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",

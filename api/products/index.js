@@ -13,5 +13,36 @@ router.get('/detail/:SKU', async function(req, res){
     res.json(product);
 
 
-})
+});
+
+router.get('/search', async function(req, res) {
+
+    let dbQuery = {};
+
+    console.log('is it woring?', req.query);
+
+    for (let property of ["color", "size", "productType"]){
+
+        let value = req.query[property];
+
+        if(value) {
+            dbQuery[property] = {
+                $in : value.split(',')
+            };
+        }
+
+    }
+
+    console.log('made the query', dbQuery);
+
+    const collection = await getCollection("store", "products");
+
+    const productPointer = collection.find(dbQuery).project({_id: 0});
+    const products = await productPointer.toArray();
+
+    res.json(products);
+
+
+
+});
 

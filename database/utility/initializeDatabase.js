@@ -30,6 +30,7 @@ const colors = [
 ]
 
 let skuCount = 1;
+let price = 1;
 
 
 function generateProducts() {
@@ -47,7 +48,9 @@ function generateProducts() {
                         brand,
                         productType,
                         color,
-                        size
+                        size,
+                        price: price++,
+                        quantity: 5
                     })
                 }
             }

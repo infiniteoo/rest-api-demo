@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --exec babel-node api",
-    "init-db": "babel database/utility/initializeDatabase"
+    "init-db": "babel-node database/utility/initializeDatabase"
   },
   "repository": {
     "type": "git",

@@ -17,9 +17,17 @@ router.get('/detail/:SKU', async function(req, res){
 
 router.get('/search', async function(req, res) {
 
-    let dbQuery = {};
+    let dbQuery = {
 
-    console.log('is it woring?', req.query);
+        price: {
+            $gt: req.query.minPrice ? +req.query.minPrice : 0,
+            $lt: req.query.maxPrice ? +req.query.maxPrice : Infinity
+        }
+
+
+    };
+
+  /*   console.log('is it woring?', req.query); */
 
     for (let property of ["color", "size", "productType"]){
 
@@ -37,7 +45,7 @@ router.get('/search', async function(req, res) {
 
     const collection = await getCollection("store", "products");
 
-    const productPointer = collection.find(dbQuery).project({_id: 0});
+    const productPointer = collection.find(dbQuery).project({_id: 0}).limit(+req.query.limit || 10);
     const products = await productPointer.toArray();
 
     res.json(products);

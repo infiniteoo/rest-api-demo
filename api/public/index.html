@@ -7,6 +7,15 @@
         font-family:'Courier New', Courier, monospace;
 
     }
+
+    td {
+        border: 1px solid white;
+        padding: 1rem;
+    }
+
+    a:visited, a {
+        color: violet;
+    }
 </style>
 
 
@@ -45,5 +54,57 @@
 </h2>
 
 <div>
-    TODO
+    <a><h3><code>POST products/adjust/quantity</code></h3></a>
+    <p>
+        Adjusts how many items remain.
+    </p>
+    <h4>
+        POST Parameters
+    </h4>
+    <table>
+        <thead>
+            <td>
+                Parameter Name
+            </td>
+            <td>
+                Description
+            </td>
+            <td>
+                Example
+            </td>
+        </thead>
+        <tr>
+            <td>
+                token
+            </td>
+            <td>
+                Your secure token
+            </td>
+            <td>
+                "1234-5678"
+            </td>
+        </tr>
+        <tr>
+            <td>
+                SKU
+            </td>
+            <td>
+                The SKU of the product you want to modify
+            </td>
+            <td>
+                "abcd-efgh"
+            </td>
+        </tr>
+        <tr>
+            <td>
+                count
+            </td>
+            <td>
+                The amount to adjust the product count by.
+            </td>
+            <td>
+                -2
+            </td>
+        </tr>
+    </table>
 </div>

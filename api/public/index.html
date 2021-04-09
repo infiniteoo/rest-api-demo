@@ -19,19 +19,22 @@
 </h2>
 
 <div>
-    <h3><code>GET products/details/:SKU</code></h3>
+    <a href='/products/detail/1'><h3><code>GET products/details/:SKU</code></h3></a>
     <p>
         returns info about the SKU
     </p>
 </div>
 <div>
-    <h3><code>GET products/search[?property=value&property2=value2]</code></h3>
+    <a href='/products/search?color=Black,Blue'><h3><code>GET products/search[?property=value&property2=value2]</code></h3></a>
     <p>
         returns array of products matching search criteria
     </p>
+    <p>
+        TODO - document possible key values
+    </p>
 </div>
 <div>
-    <h3><code>GET products/options/:property</code></h3>
+    <a href='/products/options/brand'><h3><code>GET products/options/:property</code></h3></a>
     <p>
         returns all possible values for a field
     </p>

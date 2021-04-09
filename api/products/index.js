@@ -54,3 +54,15 @@ router.get('/search', async function(req, res) {
 
 });
 
+
+router.get('/options/:property', async function (req, res) {
+
+    const { property } = req.params;
+    const collection = await getCollection("store", "products");
+
+    const options = await collection.distinct(property);
+    res.json(options);
+
+
+})
+

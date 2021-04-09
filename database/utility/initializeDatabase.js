@@ -70,6 +70,15 @@ const collection = await getCollection("store", "products");
 await collection.deleteMany();
 await collection.insertMany(products);
 
+const tokens = await getCollection("auth", "tokens");
+await tokens.insertOne({
+    owner: "CLIENT-1",
+    value: 1234,
+    expiry: null,
+    canModifyProducts: true
+})
+
+
 console.log('DONE!');
 
 

@@ -66,3 +66,34 @@ router.get('/options/:property', async function (req, res) {
 
 })
 
+router.post('/adjust/quantity', async function(req, res) {
+
+    const { SKU, token, count } = req.body;
+    const tokens = await getCollection("auth", "tokens");
+    const auth = await tokens.findOne({value: token});
+
+    if (!auth || !auth.canModifyProducts) {
+        res.json({error: 'invalid auth'});
+        return;
+    };
+
+    const products = await getCollection("store", "products");
+    const product = await products.findOne({SKU});
+    await products.updateOne({
+        SKU
+    }, {
+        $set: {
+            quantity: product.quantity + +count
+        }
+    });
+
+    res.json({success: true});
+
+
+
+
+
+
+
+})
+

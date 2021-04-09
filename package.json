@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "babel-node api/products/index.spec",
     "start": "nodemon --exec babel-node api",
     "init-db": "babel-node database/utility/initializeDatabase"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/infiniteoo/rest-api-demo#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "mongodb": "^3.6.6",
     "nodemon": "^2.0.7"
